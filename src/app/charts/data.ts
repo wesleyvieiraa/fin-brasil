@@ -1,6 +1,6 @@
 export const stackedAreaData = [
     {
-        "key": "North America",
+        "key": "Paraná",
         "values": [
             23.041422681023,
             19.854291255832,
@@ -499,7 +499,7 @@ export const stackedAreaData = [
     },
 
     {
-        "key": "Europe",
+        "key": "São Paulo",
         "values": [
             9.3433263069351,
             8.4583069475546,
@@ -624,7 +624,7 @@ export const stackedAreaData = [
     },
 
     {
-        "key": "Australia",
+        "key": "Rio de Janeiro",
         "values": [
             5.1162447683392,
             4.2022848306513,

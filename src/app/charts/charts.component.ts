@@ -1055,13 +1055,13 @@ export class ChartsComponent implements OnInit, OnDestroy {
 		color: ["#A996E5", "#8DBDF7", "#E1E2E3"],
 		legend: {
 		  data: [
-			"North America",
-			"Africa",
-			"South America",
-			"Asia",
-			"Europe",
-			"Australia",
-			"Antarctica",
+			"Paraná",
+			"São Paulo",
+			"Rio de Janeiro",
+			"Minas Gerais",
+			"Rio Grande do Sul",
+			"Santa Catarina",
+			"Espírito Santos",
 		  ],
 		  top: "top",
 		  right: "1%",
@@ -1143,7 +1143,7 @@ export class ChartsComponent implements OnInit, OnDestroy {
 		],
 		series: [
 		  {
-			name: "North America",
+			name: "Paraná",
 			type: "line",
 			stack: "series",
 			areaStyle: {},
@@ -1155,7 +1155,7 @@ export class ChartsComponent implements OnInit, OnDestroy {
 		  },
 	
 		  {
-			name: "Europe",
+			name: "São Paulo",
 			type: "line",
 			stack: "series",
 			areaStyle: {},
@@ -1166,7 +1166,7 @@ export class ChartsComponent implements OnInit, OnDestroy {
 			},
 		  },
 		  {
-			name: "Australia",
+			name: "Rio de Janeiro",
 			type: "line",
 			stack: "series",
 			areaStyle: {},
