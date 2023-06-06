@@ -1,0 +1,65 @@
+<pg-header extraClass="bg-primary p-r-0">
+  <div class="header-inner header-md-height">
+    <!-- START MOBILE SIDEBAR TOGGLE -->
+    <a href="javascript:void(0);" class="btn-icon-link header-icon toggle-sidebar d-lg-none" (click)="toggleHorizontalMenuMobile()">
+      <i class="pg-icon">menu</i>
+    </a>
+    <div class="d-flex align-items-center">
+	  <!-- START User Info-->
+	  <div class="pull-left p-r-10 fs-14 font-heading d-lg-inline-block d-none text-white">
+		<span class="semi-bold">AEP</span> - <span class="">Fin Brasil</span>
+	  </div>
+    </div>
+  </div>
+  <div class="bg-white">
+    <div class="container">
+      <pg-horizontal-menu [Items]="menuItems" HideExtra="4">
+        <ng-template #mobileSidebarFooter>
+          <a href="javascript:void(0)" class="search-link d-flex justify-content-between align-items-center d-lg-none"
+            (click)="openSearch($event)">Tap here to search <i class="pg pg-search float-right"></i></a>
+        </ng-template>
+      </pg-horizontal-menu>
+    </div>
+  </div>
+</pg-header>
+<div class="page-container ">
+  <!-- START PAGE CONTENT WRAPPER -->
+  <div class="page-content-wrapper {{_pageContainerClass}}">
+    <!-- START PAGE CONTENT -->
+    <div class="content {{_contentClass}}">
+      <div class="bg-white">
+        <div class="container">
+          <ol class="breadcrumb breadcrumb-alt">
+            <li class="breadcrumb-item">
+              <a href="javascript:void(0)">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+    <!-- END PAGE CONTENT -->
+    <!-- START COPYRIGHT -->
+    <!-- START CONTAINER FLUID -->
+    <ng-template [ngIf]="_footer">
+      <div class=" container   container-fixed-lg footer">
+        <div class="copyright sm-text-center">
+          <p class="small no-margin pull-left sm-pull-reset">
+            <span class="hint-text">Copyright &copy; 2023 </span>
+            &nbsp;<span class="font-montserrat">Garotos de Programa</span>.&nbsp;
+            <span class="hint-text">All rights reserved. </span>
+            <span class="sm-block"><a href="javascript:void(0)" class="m-l-10 m-r-10">Terms of use</a> <span
+                class="muted">|</span> <a href="javascript:void(0)" class="m-l-10">Privacy Policy</a></span>
+          </p>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </ng-template>
+    <!-- END COPYRIGHT -->
+  </div>
+  <!-- END PAGE CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTAINER -->
+<app-search-overlay></app-search-overlay>
+<app-quickview></app-quickview>

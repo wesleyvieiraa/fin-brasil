@@ -1,0 +1,31 @@
+<div *ngIf="!disable" class="menu-bar header-sm-height" #menuWrapper [class.open]="_horizontalMobileMenu">
+  <a href="javascript:void(0)" (click)="toggleHorizontalMenu()" class="btn-link header-icon toggle-sidebar d-lg-none">
+    <i class="pg-icon">close</i>
+  </a>
+  <ul (cdkObserveContent)="_onContentChanges()">
+    <li *ngFor="let item of _renduerMenuItems" [class.open]="item.open || item.mToggle ==='open'"
+      [class.opening]="item.opening" [class.more]="item.type" [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{exact: true}">
+      <a href="javascript:void(0);" *ngIf="item.submenu;else singleLink" (click)="toggleLink($event,item)">
+        <span class="title">
+          <ng-template [ngIf]="item.type != 'more'">{{ item.label }}</ng-template>
+          <i *ngIf="item.type" class="pg-icon">more_horizontal</i>
+        </span>
+        <span *ngIf="item.submenu && !item.type" class=" arrow" [class.open]="item.mToggle ==='open'"></span>
+      </a>
+      <ng-template #singleLink>
+        <a *ngIf="item.routerLink" [routerLink]="[item.routerLink]"><span class="title">{{ item.label }}</span>
+        </a>
+        <a *ngIf="item.externalLink" href="{{item.externalLink}}" [attr.target]="item.target"><span
+            class="title">{{ item.label }}</span>
+        </a>
+      </ng-template>
+    </li>
+  </ul>
+  
+  <ng-template [ngTemplateOutlet]="mobileSidebarFooter"></ng-template>
+</div>
+<div class="horizontal-menu-backdrop-dekstop" [style.display]="(currentItem?.open) ? 'block':'none'"
+  (click)="closeHorizontalMenu()"></div>
+<div class="horizontal-menu-backdrop" [style.display]="_horizontalMobileMenu ? 'block':'none'"
+  (click)="toggleHorizontalMenu()"></div>
